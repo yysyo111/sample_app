@@ -33,7 +33,7 @@ class ListsController < ApplicationController
   private #「ここから下はこのcontrollerの中でしか呼び出せません」
   # ストロングパラメータ(「マスアサインメント脆弱性」というセキュリティ上の問題を防ぐことができる)
   def list_params
-    params.require(:list).permit(:title, :body)
+    params.require(:list).permit(:title, :body, :image) #ストロングパラメータ内にimageを追加し、imageのデータの取得を許可
   end
 end
 
