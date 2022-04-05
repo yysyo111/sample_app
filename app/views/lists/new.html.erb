@@ -1,2 +1,21 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h1>新規登録</h1>
+<%= form_with model: @list, url:'/lists', method: :post do |f| %> <!--基本形からmodelというオプションを追加し、その中にListモデルの情報を記述しています。-->
+  <h4>タイトル</h4>
+  <%= f.text_field :title %> <!--このブロック変数「f」には設定したmodelの情報(今回であればList.new)も含まれている-->
+  
+  <h4>本文</h4>
+  <%= f.text_area :body %>
+  
+  <%= f.submit '投稿' %>
+<% end %>
+
+<!--modelオプションでList.newを設定するだけで、自動的CreateアクションのURLへ送信することができる-->
+<!--「:title」の部分にはプロパティが入ること-->
+<!--ブロック変数「f」には-->
+<!--Listモデルの情報も入っているためこのプロパティ名をtitleとすることで、Listモデルにあるtitleカラムと-->
+<!--Railsは判別することができ、安全データベースに保存することができる-->
+
+
+
+<!--url :どのURLへフォームの情報を送信するか-->
+<!-- method :-HTTPメソッドを指定-->
