@@ -1,2 +1,12 @@
-<h1>Lists#index</h1>
-<p>Find me in app/views/lists/index.html.erb</p>
+<h1>投稿一覧</h1>
+
+<% @lists.each do |list| %>
+
+  <p>タイトル</p>
+  <span><%= list.title %></span>
+<% end %>
+
+<!--@listsの中身は、先ほどコントローラのindexアクションで代入した内容がそのまま入っています。-->
+<!--@lists.eachと記述することで、Listレコードの数だけ繰り返し処理を行います。-->
+<!--listという変数に格納されます-->
+<!--list.[カラム名]　list.titleと記述することで、投稿のタイトル（レコードのカラムの内容）が表示-->

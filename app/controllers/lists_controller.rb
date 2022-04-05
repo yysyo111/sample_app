@@ -13,6 +13,7 @@ class ListsController < ApplicationController
   end
 
   def index
+    @lists = List.all
   end
 
   def show
@@ -34,3 +35,5 @@ end
 # permit :requireで絞り込んだデータの中から、保存を許可するカラムを指定します。
 # privateより後に定義されたメソッドは、アクションとして認識されなくなり、URLと対応できなくなり,メソッドの呼び出しに制限をかけることができる
 # privateメソッドの名前は、「モデル名_params」
+
+# Listからallメソッドを呼び出しているので、listsテーブルに保存されている全てのデータを取得すること
